@@ -257,10 +257,6 @@ def scrape_record(case_number):
         '//*[@id="mainTableContent"]/tbody/tr/td/table/tbody/tr[2]/td[2]/table[2]/tbody/tr/td[2]/table/tbody/tr[8]/td[2]').text.strip()  # PartyID is a field within the portal system to uniquely identify defendants
 
     record = r.build()
-#    record = Record(_id, _state, _county, case_number, CaseNum, AgencyReportNum, PartyID, FirstName, MiddleName,
-#                    LastName, Suffix, DOB, Race, Sex, ArrestDate, FilingDate, OffenseDate, DivisionName, CaseStatus,
-#                    DefenseAttorney, PublicDefender, Judge, list(Charges.values()), ArrestingOfficer,
-#                    ArrestingOfficerBadgeNumber)
     ScraperUtils.write_csv(FLAGS.output, record, FLAGS.verbose)
 
 
